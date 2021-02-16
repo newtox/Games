@@ -1,0 +1,71 @@
+.tic-tac-toe table {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.tic-tac-toe td {
+    border: 1px solid black;
+    height: 5em;
+    position: relative;
+    text-align: center;
+    width: 5em;
+}
+
+.tic-tac-toe table:not(.game-over) td {
+    cursor: pointer;
+}
+
+.tic-tac-toe td button {
+    position: absolute;
+    left: -100vw;
+}
+
+.tic-tac-toe .o {
+    background: rgb(79, 190, 194);
+    color: rgb(79, 190, 194);
+}
+
+.tic-tac-toe .x {
+    background: rgb(255, 132, 0);
+    color: rgb(255, 132, 0);
+}
+
+.tic-tac-toe .o,
+.tic-tac-toe .x {
+    z-index: -1;
+}
+
+.tic-tac-toe .o::after,
+.tic-tac-toe .x::after {
+    color: black;
+    display: block;
+    font-size: 5em;
+    position: absolute;
+    width: 100%;
+}
+
+.tic-tac-toe .o::after {
+    content: "○";
+    top: -0.2em;
+}
+
+.tic-tac-toe .x::after {
+    content: "×";
+    top: -0.125em;
+}
+
+.tic-tac-toe .o.highlighted::after,
+.tic-tac-toe .x.highlighted::after {
+    text-shadow:
+        0 0 1px #fff,
+        0 0 2px #fff,
+        0 0 3px #fff,
+        0 0 4px white,
+        0 0 5px white,
+        0 0 6px white,
+        0 0 7px white;
+}
+
+.tic-tac-toe .game-over {
+    border-color: red;
+}
